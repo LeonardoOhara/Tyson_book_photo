@@ -50,6 +50,19 @@ img {
     display: inline-block;
 }
 
+.grid-wrapper > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.5s ease;  /* Adiciona transição suave para o zoom */
+}
+
+/* Aplica o efeito de escala individualmente quando o mouse passa sobre a imagem */
+.grid-wrapper > div > img:hover {
+    transform: scale(1.1); /* Aumenta a imagem em 10% */
+}
+
 .grid-wrapper > div {
     display: flex;
     flex-wrap: center;
@@ -67,7 +80,7 @@ img {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-auto-rows: 200px;
+    grid-auto-rows: 250px;
     grid-auto-flow: dense;
 }
 
@@ -83,3 +96,13 @@ img {
     grid-column: span 2;
     grid-row: span 2;
 }
+
+@media screen and (max-width: 600px) {
+    .text {
+        text-align: justify;  /* Alinha o texto de forma justificada */
+        font-size: 1.2em;      /* Ajusta o tamanho da fonte */
+        line-height: 1.5;      /* Melhorando o espaçamento entre linhas */
+        margin: 10px;          /* Adiciona margem para não grudar nas bordas */
+    }
+}
+    
